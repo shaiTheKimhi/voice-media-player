@@ -31,6 +31,11 @@ namespace player
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            test t = new test();
+            this.Hide();
+            t.ShowDialog();
+            this.Close();
+
             progressBar1.Maximum = MAX_PROGRESS_BAR;
             timer1.Enabled = false;
             
