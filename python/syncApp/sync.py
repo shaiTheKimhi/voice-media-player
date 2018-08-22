@@ -13,3 +13,12 @@ def sync_changes():
         additions = changes[0]
         deletions =  changes[1]
         update_changes(additions,deletions)
+
+
+
+#compares two lists
+#returns two lists
+#first list is additions
+#second list is deletions
+def get_changes(list1, list2):
+    return [i for i in list1 if i not in list2],[i for i in list2 if i not in list1]
