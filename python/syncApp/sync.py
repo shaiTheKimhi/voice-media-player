@@ -1,12 +1,18 @@
-import os
+import sys, os
 import time
+from threading import Thread
 
+current  = os.getcwd()
+sourceDir = "\songs"
+if(len(sys.argv) > 1):
+    sourceDir = sys.argv[1]
+listDir = os.listdir(current + sourceDir)
 
 def sync_changes():
     global listDir
     while(True):
         time.sleep(2)
-        tempDir = os.listdir(os.getcwd()+ sourceDir)
+        tempDir = os.listdir(current + sourceDir)
         changes = get_changes(tempDir, listDir)
         #reorganizing the array into listDir and changes to additions and deletions
         listDir = tempDir
@@ -36,3 +42,5 @@ def save_to_server(file):
 #deletes the given file from the remote server
 def delete_from_server(file):
     no = None
+
+
