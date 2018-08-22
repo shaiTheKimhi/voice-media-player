@@ -22,3 +22,17 @@ def sync_changes():
 #second list is deletions
 def get_changes(list1, list2):
     return [i for i in list1 if i not in list2],[i for i in list2 if i not in list1]
+
+#responsible for saving directory changes
+def update_changes(additions, deletions):
+    for file in deletions:
+        delete_from_server(file)
+    for file in additions:
+        save_to_server(file)
+
+#saves the given file to remote server
+def save_to_server(file):
+    no = None
+#deletes the given file from the remote server
+def delete_from_server(file):
+    no = None
