@@ -19,7 +19,8 @@ def sync_changes():
         additions = changes[0]
         deletions =  changes[1]
         update_changes(additions,deletions)
-
+        #debug print line
+        print(json.dumps(listDir) + "->" + json.dumps(additions) + ";" + json.dumps(deletions))
 
 
 #compares two lists
@@ -43,4 +44,5 @@ def save_to_server(file):
 def delete_from_server(file):
     no = None
 
+thread = Thread(target = sync_changes())
 
