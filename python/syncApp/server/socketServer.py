@@ -47,6 +47,7 @@ def handle(data, client):
            with open(source + "/" + f, 'r') as file:
                dic[f] = file.read()
         sock.sendto(client, json.dumps(dic))
+    #keep the handle function, add handlers
 
         
 
