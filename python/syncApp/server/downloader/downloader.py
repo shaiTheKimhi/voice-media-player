@@ -22,4 +22,4 @@ def extract_link(html):
     return sub
 
 def download_link(lnk):
-    YouTube("youtu.be/" + lnk).streams.first().download()
+    YouTube("youtu.be/" + lnk).streams.get_by_itag(140).download()
